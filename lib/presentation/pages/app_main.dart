@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:stock_scan_parser/core/models/stock_model.dart';
 import 'package:stock_scan_parser/presentation/controllers/item_controller.dart';
+import 'package:stock_scan_parser/presentation/widgets/shimmer_placeholders.dart';
 
 import 'expanded_list.dart';
 
@@ -23,7 +24,7 @@ class AppMain extends StatelessWidget {
         ),
         body: Obx(() =>
           itemController.isLoadingData.value ?
-          const Center(child: CircularProgressIndicator()):
+          const CommonPlaceHolder():
           ListView.builder(
           itemCount: itemController.moduleItemsList.length,
           shrinkWrap: true,
